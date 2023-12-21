@@ -32,7 +32,6 @@ export async function GET(req: NextRequest) {
     data : data
   };
   const res = await axios.request(config);
-  console.log(res.data);
   const { token } = res.data;
   return new NextResponse(`https://discord.com/billing/partner-promotions/1180231712274387115/${token}`);
 }
