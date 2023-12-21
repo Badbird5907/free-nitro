@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 export async function GET(req: NextRequest) {
   let hex = "";
   for (let i = 0; i < 65; i++) {
@@ -33,7 +36,11 @@ export async function GET(req: NextRequest) {
   };
   const res = await axios.request(config);
   const { token } = res.data;
-  return new NextResponse(`https://discord.com/billing/partner-promotions/1180231712274387115/${token}`);
+  return new NextResponse(`https://discord.com/billing/partner-promotions/1180231712274387115/${token}`, {
+    status: 200,
+    headers: {
+      "Cache-Control": "no-cache"
+    }
+  });
 }
 
-export const fetchCache = 'force-no-store';
