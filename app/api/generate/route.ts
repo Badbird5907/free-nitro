@@ -9,11 +9,11 @@ export async function GET(req: NextRequest) {
   for (let i = 0; i < 65; i++) {
     hex += Math.floor(Math.random() * 16).toString(16);
   }
-  let data = JSON.stringify({
+  const data = JSON.stringify({
     "partnerUserId": hex,
   });
 
-  let config = {
+  const config = {
     method: 'post',
     maxBodyLength: Infinity,
     url: 'https://api.discord.gx.games/v1/direct-fulfillment',
