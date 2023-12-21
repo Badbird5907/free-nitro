@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
     hex += Math.floor(Math.random() * 16).toString(16);
   }
   let data = JSON.stringify({
-    "partnerUserId": "17d9600c5e7923d4dec40514b538ba227aa58ed608b9c5a8d7ade36a31fac9a2"
+    "partnerUserId": hex,
   });
 
   let config = {
