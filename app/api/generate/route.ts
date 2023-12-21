@@ -35,3 +35,5 @@ export async function GET(req: NextRequest) {
   const { token } = res.data;
   return new NextResponse(`https://discord.com/billing/partner-promotions/1180231712274387115/${token}`);
 }
+
+export const fetchCache = 'force-no-store';
