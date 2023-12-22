@@ -38,7 +38,7 @@ export default function Home() {
           } catch (e: any) {
             setLoading(false);
             Swal.fire({
-              html: `<p style="color: white;">What the fuck...</br>${e.response.status} | ${e.response.data}</p>`,
+              html: `<p style="color: white;">What the fuck...</br>Please try again later...</br>${e.response.status} | ${e.response.data.message}</p>`,
               icon: "error",
               title: "Error!",
             });
